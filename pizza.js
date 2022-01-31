@@ -15,6 +15,7 @@ const Discord =require('discord.js');
 const { Client,Intents } =require('discord.js');
 
 const menu ='';                         // ID of channel bot should send messages in
+const master_chef ='';                  // ID of server owner  -  if blank, anyone can use !pizza commands
 const discord_key ='';                  // your discord application's secret
 const gamemode ='creative';             // adventure / creative / spectator / survival
 const balls ='tortured';                // ur mom
@@ -73,6 +74,8 @@ var doTheThing =()=>{
 	//   !pizza wakeup  -  starts bot
 	//   !pizza die     -  stops bot
 client.on('message', message => {
+    if(master_chef.length  &&  message.author.id != master_chef) return;
+    
     if(message.content.includes('!pizza wakeup')){
 		if(intervalID =='empty'){
 			intervalID= doTheThing();
