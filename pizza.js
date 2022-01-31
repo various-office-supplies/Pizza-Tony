@@ -2,6 +2,7 @@
 	- made by Benny 'n Sky
 	
 	- thanks be to the Muskrat, who so kindly graced humanity with GPT-2, which we used for all data training
+	- thanks also to DiscordChatExporter, which saved me a buncha time
 
 	- recommended Node v16.10.0+
 	- npm install discord.js@13.6.0
@@ -13,10 +14,10 @@ const fs =require('fs');
 const Discord =require('discord.js');
 const { Client,Intents } =require('discord.js');
 
-const menu ='';					// ID of channel bot should send messages in
-const discord_key ='';			// your discord application's secret
-const gamemode ='creative';		// adventure / creative / spectator / survival
-const balls ='tortured';		// ur mom
+const menu ='';                         // ID of channel bot should send messages in
+const discord_key ='';                  // your discord application's secret
+const gamemode ='creative';             // adventure / creative / spectator / survival
+const balls ='tortured';                // ur mom
 
 
 	// opens TOPPINGS file and splits into an array by line breaks
@@ -69,7 +70,7 @@ var doTheThing =()=>{
 
 
 	// commands (!pizza)
-	//	 !pizza wakeup  -  starts bot
+	//   !pizza wakeup  -  starts bot
 	//   !pizza die     -  stops bot
 client.on('message', message => {
     if(message.content.includes('!pizza wakeup')){
