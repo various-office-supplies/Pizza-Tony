@@ -1,5 +1,5 @@
 /**
-	- made by Benny 'n Sky
+	- made by Benny 'n Ren
 	
 	- thanks be to the Muskrat, who so kindly graced humanity with GPT-2, which we used for all data training
 	- thanks also to DiscordChatExporter, which saved me a buncha time
