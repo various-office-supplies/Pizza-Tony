@@ -252,7 +252,40 @@ client.on('ready', async()=>
 
 
 client.on('error', (err)=>{
-  console.error(err);
+	let err_msg = err.toString().toLowerCase();
+	
+	let err_list =[
+		'connection reset by peer',
+		'socket hang up',
+		'request timed out',
+		'504 gateway timeout',
+		'getaddrinfo enotfound ',
+		'connection timeout',
+		'websocket was closed',
+		'heartbeat',
+		'500 internal server error',
+		'internal server',
+		'eai_again'
+	];
+	
+	for(let i of err_list)
+		if(err_msg.includes(i))
+		{
+			console.log(`@${giveMePrettyDate()}  DISCORD ERR:   ${i}`);
+			err_msg = false;
+			break;
+		}
+	
+	if( err_msg )
+	{
+		console.log(`--->  CRASHING FROM MSG:  ${err_msg}`);
+		console.error(err);
+		
+	}else
+	{
+		(async()=>{ await wait(30); })		// need to fix this :P
+	}
+	
 });
 
 
