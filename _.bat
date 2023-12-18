@@ -1,4 +1,4 @@
 :loop
-node pizza.js
+node pizza.js > PIZZA.js
 pause
 goto loop
